@@ -1,0 +1,60 @@
+﻿@model IEnumerable<StudentDetails.ViewModels.StudentDetailViewModel>
+@{
+    ViewBag.Title = "Student Details";
+}
+<h2>
+    Student Details</h2>
+<p>
+    @Html.ActionLink("Add New Data", "NewStudentData")
+</p>
+<table style="border: 1px solid #ddd; border-collapse: collapse;">
+    <tr>
+        <th style="border: 1px solid #ddd; border-collapse: collapse;">
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th style="border: 1px solid #ddd; border-collapse: collapse;">
+            @Html.DisplayNameFor(model => model.English)
+        </th>
+        <th style="border: 1px solid #ddd; border-collapse: collapse;">
+            @Html.DisplayNameFor(model => model.Science)
+        </th>
+        <th style="border: 1px solid #ddd; border-collapse: collapse;">
+            @Html.DisplayNameFor(model => model.Computer)
+        </th>
+        <th style="border: 1px solid #ddd; border-collapse: collapse;">
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th style="border: 1px solid #ddd; border-collapse: collapse;">
+            @Html.DisplayNameFor(model => model.Percentage)
+        </th>
+        <th style="border: 1px solid #ddd; border-collapse: collapse;">
+            @Html.DisplayNameFor(model => model.Grade)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="color:@(item.Grade == "Distinction" ? "green" : "black")">
+            <td style="border: 1px solid #ddd; border-collapse: collapse;">
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td style="border: 1px solid #ddd; border-collapse: collapse;">
+                @Html.DisplayFor(modelItem => item.English)
+            </td>
+            <td style="border: 1px solid #ddd; border-collapse: collapse;">
+                @Html.DisplayFor(modelItem => item.Science)
+            </td>
+            <td style="border: 1px solid #ddd; border-collapse: collapse;">
+                @Html.DisplayFor(modelItem => item.Computer)
+            </td>
+            <td style="border: 1px solid #ddd; border-collapse: collapse;">
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td style="border: 1px solid #ddd; border-collapse: collapse;">
+                @Html.DisplayFor(modelItem => item.Percentage) %
+            </td>
+            <td style="border: 1px solid #ddd; border-collapse: collapse;">
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+        </tr>
+    }
+</table>
