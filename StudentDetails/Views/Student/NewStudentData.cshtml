@@ -1,0 +1,67 @@
+﻿@model StudentDetails.Models.StudentDetail
+
+@{
+    ViewBag.Title = "New Student Data";
+}
+
+<h2>New Student Data</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Student Detail</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StudentName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StudentName)
+            @Html.ValidationMessageFor(model => model.StudentName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.English)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.English)
+            @Html.ValidationMessageFor(model => model.English)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Science)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Science)
+            @Html.ValidationMessageFor(model => model.Science)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Computer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Computer)
+            @Html.ValidationMessageFor(model => model.Computer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Year)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Year)
+            @Html.ValidationMessageFor(model => model.Year)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "StudentsDetail")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
